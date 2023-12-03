@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <imageEditor :config="config" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import imageEditor from "./components/imageEditor.vue";
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  components: { imageEditor },
+  data() {
+    return {
+      config: {
+        backgroundImage:
+          "https://img2.hayocdn.com/client/image/81/7f6088a2fe92ab26b123a47c000ba973.png~tplv-jiivuhwl6u-resize:5000.awebp",
+      },
+    };
   },
 };
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 70vw;
+  margin: 100px auto 0;
 }
 </style>
